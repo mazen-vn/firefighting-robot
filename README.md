@@ -36,12 +36,12 @@ It demonstrates how automatic control and embedded systems can revolutionize ind
 
 ## ✨ Features
 
-- 🔍 **Flame Detection**: Digital flame sensors (LEFT, FORWARD, RIGHT)
-- 🚗 **Differential Drive**: Controlled via L298N (or L293D) motor driver
-- 💦 **Servo-Controlled Nozzle**: Directs water precisely
-- 🔄 **Autonomous Suppression**: Activates pump and sweeps nozzle
-- 🚨 **Emergency Buzzer**: Alerts during fire engagement
-- 🔧 **Modular Design**: Sensor/control logic separation for flexibility
+-  **Flame Detection**: Digital flame sensors (LEFT, FORWARD, RIGHT)
+-  **Differential Drive**: Controlled via L298N (or L293D) motor driver
+-  **Servo-Controlled Nozzle**: Directs water precisely
+-  **Autonomous Suppression**: Activates pump and sweeps nozzle
+-  **Emergency Buzzer**: Alerts during fire engagement
+-  **Modular Design**: Sensor/control logic separation for flexibility
 
 ---
 
@@ -179,16 +179,14 @@ firefighting-robot/
 ├── src/
 │   ├── firefighterRobot.ino
 │   ├── control_logic.cpp
-│   ├── control_logic.h
-│   ├── sensors.cpp
-│   └── sensors.h
+│   └── sensors.cpp
 ├── README.md
 └── LICENSE
 ```
 
 ---
 
-## 👥 Team & Acknowledgements
+## 👥 The Byte Builders Team & Acknowledgements
 
 - **Team Members**: Mazen Mohamed, Mohamed Abdel Moneim, Mohamed Hamed, Muhamad Reda, Mohamed El-Basyouni
 - **Mentor**: Dr. Heba Selim
