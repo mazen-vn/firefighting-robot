@@ -2,7 +2,6 @@ Firefighting Robot 🚒🤖
 
 An Arduino-powered autonomous firefighting robot that detects, navigates to, and extinguishes flames using embedded control logic—demonstrating automatic control systems in hazardous-task automation.
 
-
 ---
 
 📌 Table of Contents
@@ -271,7 +270,7 @@ firefighting-robot/
 
 Team & Acknowledgements
 
-Team Members: Mazen Mohamed, Mohamed Hamed, Mohamed mejahd, Mohamed Yonise, Basune
+Team Members: Mazen Mohamed
 
 Mentor: Dr. Heba Selem
 
