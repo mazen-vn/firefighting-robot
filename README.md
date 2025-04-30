@@ -1,260 +1,177 @@
-Firefighting Robot 🚒🤖
+# 🔥 Firefighting Robot — Autonomous Arduino-Based System 🤖🚨
 
-An Arduino-powered autonomous firefighting robot that detects, navigates to, and extinguishes flames using embedded control logic—demonstrating automatic control systems in hazardous-task automation.
-
----
-
-📌 Table of Contents
-
-1. Overview
-
-
-2. Features
-
-
-3. Components Required
-
-
-4. Circuit Diagram
-
-
-5. Software Requirements
-
-
-6. Installation & Setup
-
-
-7. Usage
-
-
-8. Code Structure & Snippets
-
-
-9. How It Works
-
-
-10. Project Structure
-
-
-11. Team & Acknowledgements
-
-
-12. License
-
-
-
+An Arduino-powered autonomous firefighting robot that detects, navigates to, and extinguishes flames using embedded control logic. This project showcases the practical application of automatic control systems in replacing humans in hazardous environments.
 
 ---
 
-Overview
+## 📌 Table of Contents
 
-This Firefighting Robot was developed as part of our control systems coursework. Equipped with a 5-channel flame sensor array, differential-drive DC motors, and a servo-controlled water pump, the robot autonomously:
-
-Scans for fire sources
-
-Navigates toward detected flames
-
-Extinguishes fires by spraying water
-
-Signals an alarm upon engagement
-
-
-It illustrates how automatic control and embedded systems can replace hazardous tasks in industrial safety, disaster response, and smart infrastructures.
-
-
----
-
-Features
-
-Autonomous Flame Detection via digital flame sensors (LEFT, FORWARD, RIGHT)
-
-Differential Drive using L298N (or L293D) motor driver
-
-Servo-Controlled Nozzle for precision water targeting
-
-Water Pump Activation through a relay module
-
-Emergency Alarm with a buzzer
-
-Modular Design: separate sensor and control logic modules for easy extension
-
-
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Components Required](#components-required)
+4. [Circuit Diagram](#circuit-diagram)
+5. [Software Requirements](#software-requirements)
+6. [Installation & Setup](#installation--setup)
+7. [Usage](#usage)
+8. [Code Structure & Snippets](#code-structure--snippets)
+9. [How It Works](#how-it-works)
+10. [Project Structure](#project-structure)
+11. [Team & Acknowledgements](#team--acknowledgements)
+12. [License](#license)
 
 ---
 
-Components Required
+## 🧠 Overview
 
-Arduino Uno
+This firefighting robot was developed as part of our control systems coursework. Equipped with a 5-channel flame sensor array, differential-drive DC motors, and a servo-controlled water pump, the robot autonomously:
 
-USB-A to Micro-USB cable
+- **Scans** for fire sources
+- **Navigates** toward detected flames
+- **Extinguishes** fires by spraying water
+- **Triggers** an alarm upon engagement
 
-Car chassis kit
-
-L298N motor driver module (or L293D alternative)
-
-5-channel flame sensor module
-
-Servo motor
-
-Mini DC submersible water pump
-
-Relay module
-
-Buzzer
-
-12V rechargeable battery pack
-
-On/off power switch & DC female connector jack
-
-Jumper wires and hookup cables
-
-Soldering iron & solder wire
-
-Hot melt glue gun & glue sticks
-
-
+It demonstrates how automatic control and embedded systems can revolutionize industrial safety, disaster response, and smart infrastructure solutions.
 
 ---
 
-Circuit Diagram
+## ✨ Features
 
-L298N Motor Driver
-
-
----
-
-Servo Motor
-
-
----
-
-5-Channel Flame Sensor Module
-
-> ⚠ Ensure all grounds (battery, Arduino, modules) are tied together.
-
-
-
+- 🔍 **Flame Detection**: Digital flame sensors (LEFT, FORWARD, RIGHT)
+- 🚗 **Differential Drive**: Controlled via L298N (or L293D) motor driver
+- 💦 **Servo-Controlled Nozzle**: Directs water precisely
+- 🔄 **Autonomous Suppression**: Activates pump and sweeps nozzle
+- 🚨 **Emergency Buzzer**: Alerts during fire engagement
+- 🔧 **Modular Design**: Sensor/control logic separation for flexibility
 
 ---
 
-Software Requirements
+## 🧰 Components Required
 
-Arduino IDE (v1.8.x or later)
-
-Libraries:
-
-Servo.h
-
-AFMotor.h (Adafruit Motor Shield) or equivalent
-
-SoftwareSerial (if using serial comms)
-
-
-
-
----
-
-Installation & Setup
-
-1. Clone the repo
-
-git clone https://github.com/<your-username>/firefighting-robot.git
-cd firefighting-robot
-
-
-2. Open firefighterRobot.ino in the Arduino IDE.
-
-
-3. Install any missing libraries via Sketch → Include Library → Manage Libraries.
-
-
-4. Wire components as per the Circuit Diagram.
-
-
-5. Upload the code to your Arduino Uno.
-
-
-6. Power the system with the 12V battery and switch on.
-
-
-
+- Arduino Uno
+- USB-A to Micro-USB cable
+- Car chassis kit
+- L298N motor driver module (or L293D alternative)
+- 5-channel flame sensor module
+- Servo motor
+- Mini DC submersible water pump
+- Relay module
+- Buzzer
+- 12V rechargeable battery pack
+- On/off switch & DC female connector jack
+- Jumper wires and hookup cables
+- Soldering iron & solder wire
+- Hot glue gun & glue sticks
 
 ---
 
-Usage
+## 🔌 Circuit Diagram
 
-1. Place the robot in a test area with a safe flame source (e.g., candle or LED flame simulator).
+### 🌀 L298N Motor Driver
 
+| Driver Pin | Arduino Pin       | Description                       |
+|------------|-------------------|-----------------------------------|
+| ENA        | 3                 | PWM speed control (left motors)   |
+| IN1        | 12                | Left motor direction A            |
+| IN2        | 4                 | Left motor direction B            |
+| IN3        | 7                 | Right motor direction A           |
+| IN4        | 2                 | Right motor direction B           |
+| ENB        | 5                 | PWM speed control (right motors)  |
+| 12V        | Battery +12V      | Motor power supply                |
+| GND        | Battery GND       | Common ground (also Arduino GND)  |
+| 5V         | Arduino 5V        | Logic power                       |
 
-2. It will patrol by default, scanning for fires.
+### 🎛️ Servo Motor
 
+| Servo Pin | Arduino Pin   | Description         |
+|-----------|---------------|---------------------|
+| VCC       | 5V            | Power supply        |
+| GND       | GND           | Common ground       |
+| Signal    | 11            | PWM control signal  |
 
-3. On detecting a flame, it will navigate toward it.
+### 🔥 Flame Sensor Module
 
+| Sensor Pin    | Arduino Pin | Description           |
+|---------------|-------------|-----------------------|
+| VCC           | 5V          | Power supply          |
+| GND           | GND         | Common ground         |
+| DO (LEFT)     | 10          | Digital output left   |
+| DO (FORWARD)  | 8           | Digital output front  |
+| DO (RIGHT)    | 9           | Digital output right  |
 
-4. Once in range, the pump activates and the servo sweeps to extinguish the fire.
-
-
-5. The buzzer sounds to indicate engagement, then the robot resumes patrol.
-
-
-
+> ⚠️ Ensure all grounds (battery, Arduino, modules) are interconnected.
 
 ---
 
-Code Structure & Snippets
+## 💻 Software Requirements
 
-firefighterRobot.ino: Main sketch, initializes modules and loops
+- Arduino IDE (v1.8.x or later)
+- Required Libraries:
+  - `Servo.h`
+  - `AFMotor.h` (if using Adafruit Motor Shield)
+  - `SoftwareSerial` (if serial comms are used)
 
-control_logic.h/.cpp: Motion control & firefighting routines
+---
 
-sensors.h/.cpp: Sensor initialization and flame detection functions
+## 🛠️ Installation & Setup
 
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/<your-username>/firefighting-robot.git
+   cd firefighting-robot
+   ```
+2. **Open** `firefighterRobot.ino` in the Arduino IDE.
+3. **Install** libraries via **Sketch → Include Library → Manage Libraries**.
+4. **Assemble and wire** according to the [circuit diagrams](#circuit-diagram).
+5. **Upload** the code to the Arduino Uno.
+6. **Power on** with the 12V battery and switch.
 
-Key Snippet: Fire Suppression Routine
+---
 
+## ▶️ Usage
+
+1. Set the robot on a test surface.
+2. Light a small flame (e.g., candle) or simulate a heat source.
+3. The robot will patrol and scan automatically.
+4. Upon detecting a flame, it navigates and extinguishes it.
+5. The buzzer indicates successful engagement.
+
+---
+
+## 🧾 Code Structure & Snippets
+
+- `firefighterRobot.ino` — Main sketch
+- `control_logic.h/.cpp` — Handles motor control and fire suppression logic
+- `sensors.h/.cpp` — Sensor initialization and readings
+
+### 🔧 Snippet: Fire Suppression Logic
+
+```cpp
 void put_off_fire(Servo &servo) {
-  // Stop movement
   stopMotors();
-  // Start pump
   digitalWrite(PUMP_PIN, HIGH);
   delay(500);
-  // Sweep nozzle
   for (int pos = 50; pos <= 130; pos++) { servo.write(pos); delay(10); }
   for (int pos = 130; pos >= 50; pos--) { servo.write(pos); delay(10); }
   digitalWrite(PUMP_PIN, LOW);
-  servo.write(90); // Center
+  servo.write(90);
 }
-
-
----
-
-How It Works
-
-1. Initialization: Pins and modules (motors, sensors, servo, pump, buzzer) are configured.
-
-
-2. Patrol: Continuously poll left, forward, and right flame sensors.
-
-
-3. Detection: On any sensor reading LOW, trigger firefighting sequence.
-
-
-4. Navigation: Adjust motor directions to steer toward the detected flame.
-
-
-5. Extinguish: Activate pump and servo sweep to douse the fire.
-
-
-6. Reset: Turn off pump, re-center servo, sound buzzer, then resume patrol.
-
-
-
+```
 
 ---
 
-Project Structure
+## 🔄 How It Works
 
+1. **Setup**: All peripherals initialized.
+2. **Scan**: Continuously read flame sensor states.
+3. **Navigate**: Adjust wheel directions based on detection.
+4. **Engage**: Stop, spray water, activate buzzer.
+5. **Reset**: Center nozzle, resume patrol.
+
+---
+
+## 🗂️ Project Structure
+
+```
 firefighting-robot/
 ├── assets/
 │   ├── circuit_diagram.png
@@ -262,21 +179,25 @@ firefighting-robot/
 ├── src/
 │   ├── firefighterRobot.ino
 │   ├── control_logic.cpp
+│   ├── control_logic.h
+│   ├── sensors.cpp
+│   └── sensors.h
 ├── README.md
 └── LICENSE
+```
 
+---
+
+## 👥 Team & Acknowledgements
+
+- **Team Members**: Mazen Mohamed, Mohamed Abdel Moneim, Mohamed Hamed, Muhamad Reda, Mohamed El-Basyouni
+- **Mentor**: Dr. Heba Selim
+
+Special thanks to our teaching assistants, lab engineers, and the open-source community.
 
 ---
 
-Team & Acknowledgements
+## 📄 License
 
-Team Members: Mazen Mohamed
-
-Mentor: Dr. Heba Selem
-
-
-Thanks to our TA and lab staff for their support and to the open-source community for libraries and inspiration.
-
-
----
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for full terms.
 
