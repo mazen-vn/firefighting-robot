@@ -6,8 +6,8 @@ An Arduino-powered autonomous firefighting robot that detects, navigates to, and
 
 ## 📌 Table of Contents
 
-1. [Overview](#overview)
-2. [Features](#features)
+1. [Overview](#Overview)
+2. [Features](#Features)
 3. [Components Required](#components-required)
 4. [Circuit Diagram](#circuit-diagram)
 5. [Software Requirements](#software-requirements)
