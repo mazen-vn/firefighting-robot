@@ -175,6 +175,7 @@ void put_off_fire(Servo &servo) {
 firefighting-robot/
 ├── assets/
 │   ├── circuit_diagram.png
+|   ├── video/
 │   └── images/
 ├── src/
 │   ├── firefighterRobot.ino
